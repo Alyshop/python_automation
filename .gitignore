@@ -1,0 +1,53 @@
+# Ignora tudo por padrão
+*
+
+# Permite arquivos de configuração e código-fonte
+!.gitignore
+!*.py
+!*.md
+!requirements*.txt
+!pytest.ini
+!playwright.config.*
+!conftest.py
+
+# Permite pastas e arquivos de testes
+!tests/
+!tests/**/*.py
+
+# Ignora ambientes virtuais
+.venv/
+venv/
+ENV/
+env/
+.venv.bak/
+venv.bak/
+
+# Ignora caches do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignora arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Ignora arquivos de ambiente
+.env
+.env.*
+
+# Ignora relatórios de testes
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+.cache
+nosetests.xml
+junit.xml
+
+# Ignora logs
+*.log
+logs/
+
+# Playwright: dados da sessão gravada ou capturas
+playwright-report/
+test-results/
