@@ -35,11 +35,14 @@ def teste_login_player():
         #Passo 7: Clicar no botão "Entrar"
         page.locator('xpath=//*[@id="loginInput"]/form/div[4]/div/input[2]').click()
 
-        
+        #Passo 8: Aguarda a pagina carregar 9s
+        page.wait_for_timeout(5000)
+
+        page.locator('a.btn-regular[href="/play/1245/"]').click()
 
 
         #Espera 9 segundos antes de fechar, para visualizar
-        page.wait_for_timeout(9000)
+        page.wait_for_timeout(19000)
 
         # Fecha o browser
         browser.close()
