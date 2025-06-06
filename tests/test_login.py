@@ -1,3 +1,10 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+LOGIN = os.getenv("METRIX_LOGIN")
+SENHA = os.getenv("METRIX_SENHA")
+
 # Importa a API síncrona do Playwright
 from playwright.sync_api import sync_playwright
 
@@ -23,14 +30,14 @@ def teste_login_player():
         page.wait_for_url("**/player_login", timeout=5000)
 
         #Passo 4: Preencher o campo de LOGIN
-        page.locator('xpath=//*[@id="id_phone"]').fill("11000000001")
+        page.locator('xpath=//*[@id="id_phone"]').fill(LOGIN)
 
         #Passo 5: Clicar no botão "Entrar"
         page.locator('xpath=//*[@id="loginInput"]/form/div[4]/div/input[2]').click()
 
 
         #Passo 6: Preencher o campo de SENHA
-        page.locator('xpath=//*[@id="password"]').fill("123456")
+        page.locator('xpath=//*[@id="password"]').fill(SENHA)
         
         #Passo 7: Clicar no botão "Entrar"
         page.locator('xpath=//*[@id="loginInput"]/form/div[4]/div/input[2]').click()
